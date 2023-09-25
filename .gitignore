@@ -1,0 +1,34 @@
+# Ignore Python bytecode files
+__pycache__/
+
+# Ignore virtual environment directories (if you use one)
+venv/
+env/
+.venv/
+.venv3/
+.venv2/
+
+# Ignore project-specific files
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.xlsx
+*.xls
+*.csv
+
+# Ignore editor and IDE specific files/directories
+.vscode/
+.idea/
+*.swp
+*~
+*.bak
+
+# Ignore user-specific configuration files
+config.ini
+variables.py
+
+# Ignore output directories
+data/output/
