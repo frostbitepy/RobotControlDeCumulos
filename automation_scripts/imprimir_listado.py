@@ -49,7 +49,3 @@ def generar_listado_sebaot(documento):
     except Exception as e:
         print(f"An error occurred: {str(e)}")
 
-# Example usage:
-documento = "7169194"
-
-generar_listado_sebaot(documento)

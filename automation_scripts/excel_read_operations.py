@@ -3,7 +3,7 @@ import openpyxl
 # Define the file path to the Excel sheet
 ubicacionOperaciones = "C:/Users/francisco/Desktop/Excel/PlanillaDeOperaciones.xlsx"
 
-def read_excel_data(ubicacionOperaciones):
+def read_operations_gs(ubicacionOperaciones):
     # Initialize Excel workbook and select the active worksheet
     wb = openpyxl.load_workbook(ubicacionOperaciones)
     sheet = wb["gs"]

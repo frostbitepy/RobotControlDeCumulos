@@ -10,6 +10,7 @@ user = "ROBOT"
 password = "Bot*2021"
 
 def start_sebaot_application():
+    time.sleep(3)
     # Command 1: Start the Sebaot application
     try:
         subprocess.Popen(ubicacionSebaot, shell=True)
