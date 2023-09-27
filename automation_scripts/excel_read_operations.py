@@ -1,3 +1,6 @@
+# DEPRECATED
+
+
 import openpyxl
 
 # Define the file path to the Excel sheet

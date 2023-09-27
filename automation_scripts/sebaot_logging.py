@@ -44,5 +44,3 @@ def start_sebaot_application():
 
     # Further actions can be added based on your specific requirements.
 
-if __name__ == "__main__":
-    start_sebaot_application()
