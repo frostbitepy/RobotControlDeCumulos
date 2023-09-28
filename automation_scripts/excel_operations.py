@@ -82,5 +82,9 @@ def extract_operations_from_workbook(workbook):
     return columnas
 
 
+def generate_report():
+    pass
+
+
 if __name__ == "__main__":
     extract_operations("C:/Users/francisco/Desktop/Excel/listado.xlsx")

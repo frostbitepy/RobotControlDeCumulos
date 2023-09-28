@@ -44,3 +44,8 @@ def start_sebaot_application():
 
     # Further actions can be added based on your specific requirements.
 
+def stop_sebaot_application():
+    time.sleep(3)
+    pyautogui.hotkey('alt', 'F4')
+    pyautogui.press('s')
+
