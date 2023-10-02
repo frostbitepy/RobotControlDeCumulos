@@ -79,6 +79,7 @@ def fix_excel():
 
         # Simula escribir en la primera celda (A1)
         pyautogui.click(x=100, y=100)  # Reemplaza con las coordenadas correctas
+        time.sleep(2)
         pyautogui.write('Texto de prueba')
 
         # Simula deshacer (Ctrl+Z)

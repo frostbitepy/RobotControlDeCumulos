@@ -1,9 +1,9 @@
 import datetime
-import numpy as np
-import pandas as pd
 
+
+"""
 def calcular_suma_vigente(inicio, vencimiento, capitales, fechasDesde, fechasHasta):
-  """
+  
   Calcula la suma vigente de un conjunto de pólizas, teniendo en cuenta las fechas de vigencia de cada póliza.
 
   Args:
@@ -17,7 +17,7 @@ def calcular_suma_vigente(inicio, vencimiento, capitales, fechasDesde, fechasHas
 
   Returns:
     La suma vigente de las pólizas.
-  """
+  
 
   # Convertimos las fechas a formato datetime.
 
@@ -40,11 +40,12 @@ def calcular_suma_vigente(inicio, vencimiento, capitales, fechasDesde, fechasHas
 
   montoVigente = np.sum(df[df['fechaInicio'] <= inicio].capital) + np.sum(df[df['fechaFin'] >= inicio].capital)
 
-  return montoVigente
+  return montoVigente 
+"""
 
 # Realiza la suma de los capitales de las polizas vigentes teniendo en cuenta 
 # si las fechas se superponen.
-def calcular_suma_vigente2(inicio, vencimiento, capitales, fechasDesde, fechasHasta):
+def calcular_suma_vigente(inicio, vencimiento, capitales, fechasDesde, fechasHasta):
   montoVigente = 0
   fechaInicio = datetime.datetime.strptime(inicio.replace('/','-'),'%d-%m-%Y')
   fechaFin = datetime.datetime.strptime(vencimiento.replace('/','-'),'%d-%m-%Y')
@@ -90,16 +91,7 @@ def calcular_exclusion(montoVigente, montoRecibido):
     montoExclusion = 0
   return montoExclusion
 
-if __name__ == "__main__":
-    inicio = "01/01/2023"
-    vencimiento = "31/12/2023"
-    capitales = [10000, 20000, 30000]
-    fechasDesde = ["01/01/2023", "02/01/2023", "03/01/2023"]
-    fechasHasta = ["31/12/2023", "30/12/2023", "29/12/2023"]
 
-    montoVigente = calcular_suma_vigente(inicio, vencimiento, capitales, fechasDesde, fechasHasta)
-
-    print(montoVigente)
 
   
   

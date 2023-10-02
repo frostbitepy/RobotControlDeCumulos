@@ -4,7 +4,8 @@ import subprocess
 
 # Define the file path to the Sebaot application
 ubicacionSebaot = "C:/SEBAOT/SebaotActu.exe"
-
+imagen_sebaot = "resources/images/imagen_sebaot.png"
+x_sebaot, y_sebaot = 649, 369
 # Define user and password (replace with actual credentials)
 user = "ROBOT"
 password = "Bot*2021"
@@ -18,7 +19,15 @@ def start_sebaot_application():
         print("Error:", str(e))
 
     # Command 2: Wait for Sebaot to open
-    time.sleep(23)  # Adjust the delay as needed
+    time.sleep(25)
+
+    try:
+        if pyautogui.locateOnScreen(imagen_sebaot) is not None:
+            pyautogui.click(x_sebaot, y_sebaot)
+        else:
+            print("No se encuentra la imagen")
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
 
     # Command 3: Enter the username
     pyautogui.typewrite(user)
