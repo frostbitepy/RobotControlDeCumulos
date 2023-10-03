@@ -2,6 +2,7 @@ import pyautogui
 import time
 import subprocess
 
+
 # Define the file path to the Sebaot application
 ubicacionSebaot = "C:/SEBAOT/SebaotActu.exe"
 imagen_sebaot = "resources/images/imagen_sebaot.png"

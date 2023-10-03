@@ -1,8 +1,8 @@
 import pandas as pd
-from sebaot_logging import start_sebaot_application, stop_sebaot_application
-from excel_operations import read_operations_gs, extract_operations
-from imprimir_listado import generar_listado_sebaot
-from calculos import calcular_suma_vigente, calcular_exclusion, calcular_inclusion
+from automation_scripts.sebaot_logging import start_sebaot_application, stop_sebaot_application
+from automation_scripts.excel_operations import read_operations_gs, extract_operations
+from automation_scripts.imprimir_listado import generar_listado_sebaot
+from automation_scripts.calculos import calcular_suma_vigente, calcular_exclusion, calcular_inclusion
 
 
 

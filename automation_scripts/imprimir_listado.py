@@ -4,6 +4,7 @@ import pygetwindow as gw
 
 
 
+
 output_file_name = "listado.xlsx"
 imagen_asegurado = "resources/images/imagen_asegurado.png"
 x_seguros_button, y_seguros_button = 886, 658
@@ -26,7 +27,6 @@ def generar_listado_sebaot(documento):
     time.sleep(2)
     pyautogui.press('enter')
     time.sleep(2)
-
     # Identificar si el asegurado tiene operaciones vigentes para
     # proceder a imprimir el listado
     try:

@@ -1,4 +1,6 @@
 import openpyxl
+import pandas as pd
+
 
 
 def read_operations_gs(ubicacionOperaciones):
@@ -82,8 +84,32 @@ def extract_operations_from_workbook(workbook):
     return columnas
 
 
-def generate_report():
-    pass
+def generate_report(cliente, documento, fecha_nacimiento, operacion, fecha_inicio, fecha_vencimiento, suma_asegurada):
+    # Crear un DataFrame de Pandas con los datos
+    data = {
+        'Cliente': [cliente],
+        'Documento': [documento],
+        'Fecha de Nacimiento': [fecha_nacimiento],
+        'Operación': [operacion],
+        'Fecha de Inicio': [fecha_inicio],
+        'Fecha de Vencimiento': [fecha_vencimiento],
+        'Suma Asegurada': [suma_asegurada]
+    }
+
+    df = pd.DataFrame(data)
+
+    # Guardar el DataFrame en un archivo Excel
+    writer = pd.ExcelWriter('datos_cliente.xlsx', engine='xlsxwriter')
+    df.to_excel(writer, sheet_name='Datos', index=False)
+
+    # Configurar el formato de las celdas si es necesario
+    # workbook = writer.book
+    # worksheet = writer.sheets['Datos']
+    # format = workbook.add_format({'num_format': 'dd/mm/yyyy'})
+    # worksheet.set_column('C:C', None, format)
+
+    # Cerrar el archivo Excel
+    writer.save()
 
 
 if __name__ == "__main__":
