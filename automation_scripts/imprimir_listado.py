@@ -20,7 +20,7 @@ def generar_listado_sebaot(documento):
     time.sleep(2)
     pyautogui.press('tab')
     pyautogui.press('enter')
-    logger.info("Abriendo menú de asegurados")
+    logger.info("Abriendo menu de asegurados")
     time.sleep(2)
     # pyautogui.click(x_cedula_button, y_cedula_button)
     pyautogui.press('3')
