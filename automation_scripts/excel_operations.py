@@ -1,5 +1,6 @@
 import openpyxl
 import pandas as pd
+from automation_scripts.script_logger import logger
 
 
 
@@ -64,6 +65,7 @@ def extract_operations(nombre_archivo):
             columnas[encabezado].append(valor)
 
     # Devuelve el diccionario de columnas
+    logger.info("Operaciones extraidas")
     return columnas
 
 def extract_operations_from_workbook(workbook):
@@ -81,6 +83,7 @@ def extract_operations_from_workbook(workbook):
             columnas[encabezado].append(valor)
 
     # Return the dictionary of columns
+    logger.info("Operaciones extraidas")
     return columnas
 
 
@@ -109,6 +112,7 @@ def generate_report(cliente, documento, fecha_nacimiento, operacion, fecha_inici
     # worksheet.set_column('C:C', None, format)
 
     # Cerrar el archivo Excel
+    logger.info("Archivo de datos del cliente generado")
     writer.save()
 
 

@@ -1,6 +1,7 @@
 import pyautogui
 import time
 import pygetwindow as gw
+from automation_scripts.script_logger import logger
 
 
 
@@ -19,11 +20,13 @@ def generar_listado_sebaot(documento):
     time.sleep(2)
     pyautogui.press('tab')
     pyautogui.press('enter')
+    logger.info("Abriendo menú de asegurados")
     time.sleep(2)
     # pyautogui.click(x_cedula_button, y_cedula_button)
     pyautogui.press('3')
     time.sleep(2)
     pyautogui.write(documento)
+    logger.info("Buscando asegurado con documento: %s", documento)
     time.sleep(2)
     pyautogui.press('enter')
     time.sleep(2)
@@ -46,6 +49,7 @@ def generar_listado_sebaot(documento):
             time.sleep(2)
             pyautogui.write(output_file_name)
             pyautogui.press('enter')
+            logger.info("Guardado listado para el asegurado con documento: %s", documento)
             time.sleep(1)
             pyautogui.press('s')
             time.sleep(7)
@@ -55,8 +59,10 @@ def generar_listado_sebaot(documento):
             pyautogui.press('c')
         else:
             print("No se encuentra la imagen")
+            logger.error("No se encuentra la imagen para acceder a las operaciones del asegurado con documento: %s", documento)
     except Exception as e:
         print(f"An error occurred: {str(e)}")
+        logger.error("An error occurred: No se pudo generar el listado para el asegurado con documento: %s - %s", documento, str(e))
 
 
 def close_current_excel_window():
@@ -66,8 +72,10 @@ def close_current_excel_window():
     # If there are Excel windows open, close the first one
     if excel_window:
         excel_window[0].close()
+        logger.info("Cerrando ventana de Excel")
     else:
         print("No Excel window found.")
+        logger.error("No se encuentra la ventana de Excel")
 
 
 # Función que soluciona el problema de no poder abrir luego el Excel generado por Sebaot
@@ -92,12 +100,15 @@ def fix_excel():
             excel_window[0].close()
             # Save file
             pyautogui.press('g')
+            logger.info("Fixed archivo de Excel")
         else:
             print("No Excel window found.")
+            logger.error("No se encuentra la ventana de Excel")
         
-        print("Acciones realizadas con éxito.")
+        # print("Acciones realizadas con éxito.")
     except Exception as e:
         print(f"Ocurrió un error: {str(e)}")
+        logger.error("No se edito el archivo Excel")
 
 
 if __name__ == "__main__":

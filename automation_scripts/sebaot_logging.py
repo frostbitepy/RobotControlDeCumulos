@@ -1,6 +1,7 @@
 import pyautogui
 import time
 import subprocess
+from automation_scripts.script_logger import logger
 
 
 # Define the file path to the Sebaot application
@@ -18,6 +19,7 @@ def start_sebaot_application():
         subprocess.Popen(ubicacionSebaot, shell=True)
     except Exception as e:
         print("Error:", str(e))
+        logger.error("Error: %s", str(e))
 
     # Command 2: Wait for Sebaot to open
     time.sleep(25)
@@ -27,8 +29,10 @@ def start_sebaot_application():
             pyautogui.click(x_sebaot, y_sebaot)
         else:
             print("No se encuentra la imagen")
+            logger.error("No se encuentra la imagen de Sebaot")
     except Exception as e:
         print(f"An error occurred: {str(e)}")
+        logger.error("An error occurred: No se pudo iniciar Sebaot - %s", str(e))
 
     # Command 3: Enter the username
     pyautogui.typewrite(user)
