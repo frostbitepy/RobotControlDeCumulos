@@ -39,6 +39,7 @@ def start_sebaot_application():
 
     # Command 4: Press TAB to move to the password field
     pyautogui.press('tab')
+    time.sleep(1)
 
     # Command 5: Enter the password
     pyautogui.typewrite(password)

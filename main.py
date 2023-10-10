@@ -16,7 +16,7 @@ if __name__ == "__main__":
     start_sebaot_application()
     logger.info("Sebaot iniciado")
 
-    # Read the operations from the Excel sheet
+    # Read the operations from the Excel sheetROBOT Bot*2021
     new_operations = read_operations_gs(ubicacionOperaciones)
     logger.info("Operaciones leidas")
 

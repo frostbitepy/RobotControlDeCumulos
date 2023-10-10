@@ -7,7 +7,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 # Create a file handler and set the log level
-file_handler = logging.FileHandler('script.log')
+file_handler = logging.FileHandler('script_log.log')
 file_handler.setLevel(logging.INFO)
 
 # Create a formatter and attach it to the handler
