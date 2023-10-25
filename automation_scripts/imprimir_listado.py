@@ -96,7 +96,7 @@ def fix_excel():
         time.sleep(2)
 
         # Simula escribir en la primera celda (A1)
-        pyautogui.click(x=100, y=100)  # Reemplaza con las coordenadas correctas
+        pyautogui.click(x=300, y=300)  # Reemplaza con las coordenadas correctas
         time.sleep(2)
         pyautogui.write('Texto de prueba')
 
