@@ -117,4 +117,4 @@ def generate_report(cliente, documento, fecha_nacimiento, operacion, fecha_inici
 
 
 if __name__ == "__main__":
-    extract_operations("C:/Users/francisco/Desktop/Excel/listado.xlsx")
+    extract_operations("listado.xlsx")

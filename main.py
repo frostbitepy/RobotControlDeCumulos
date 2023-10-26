@@ -7,8 +7,8 @@ from automation_scripts.script_logger import logger
 
 
 
-ubicacionOperaciones = "C:/Users/francisco/Desktop/Excel/PlanillaDeOperaciones.xlsx"
-ubicacionListado = "C:/Users/francisco/Desktop/Excel/listado.xlsx"
+ubicacionOperaciones = "PlanillaDeOperaciones.xlsx"
+ubicacionListado = "resources/listados/listado.xlsx"
 
 if __name__ == "__main__":
     logger.info("Iniciando script")
@@ -58,7 +58,7 @@ if __name__ == "__main__":
     # Crear un DataFrame de Pandas con los datos
     df = pd.DataFrame(data)
     # Guardar el DataFrame en un nuevo archivo Excel
-    df.to_excel('C:/Users/francisco/Desktop/Excel/resultado_control.xlsx', index=False)
+    df.to_excel('resultado_control.xlsx', index=False)
     logger.info("Archivo de control generado")
         
     stop_sebaot_application()

@@ -8,8 +8,8 @@ from automation_scripts.script_logger import logger
 
 output_file_name = "listado.xlsx"
 imagen_asegurado = "resources/images/imagen_asegurado.png"
-x_seguros_button, y_seguros_button = 886, 658
-x_cedula_button, y_cedula_button = 346, 654
+x_seguros_button, y_seguros_button = 892, 664
+x_cedula_button, y_cedula_button = 354, 653
 
 
 def generar_listado_sebaot(documento):
@@ -72,12 +72,13 @@ def generar_listado_sebaot(documento):
             pyautogui.press('esc')
     except Exception as e:
         print(f"An error occurred: {str(e)}")
+        pyautogui.press('esc')
         logger.error("An error occurred: No se pudo generar el listado para el asegurado con documento: %s - %s", documento, str(e))
 
 
 def close_current_excel_window():
     # Find the Excel window by title or other criteria
-    excel_window = gw.getWindowsWithTitle("listado - Excel")
+    excel_window = gw.getWindowsWithTitle("listado.xlsx - Excel")
 
     # If there are Excel windows open, close the first one
     if excel_window:
@@ -92,15 +93,16 @@ def close_current_excel_window():
 def fix_excel():
     try:
         # Find the Excel window by title or other criteria
-        excel_window = gw.getWindowsWithTitle("listado - Excel")
+        excel_window = gw.getWindowsWithTitle("listado.xlsx - Excel")
         time.sleep(2)
 
         # Simula escribir en la primera celda (A1)
-        pyautogui.click(x=100, y=100)  # Reemplaza con las coordenadas correctas
+        pyautogui.click(x=300, y=300)  # Reemplaza con las coordenadas correctas
         time.sleep(2)
         pyautogui.write('Texto de prueba')
 
         # Simula deshacer (Ctrl+Z)
+        time.sleep(2)
         pyautogui.hotkey('ctrl', 'z')
         
         # Espera un momento para que la ventana de guardado aparezca (ajusta según sea necesario).

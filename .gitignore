@@ -32,3 +32,13 @@ variables.py
 
 # Ignore output directories
 data/output/
+
+# Ignore excel files
+*.xlsx
+
+# Ignore log files
+*.log
+
+# Ignore script launcher
+*.ps1
+*.bat
